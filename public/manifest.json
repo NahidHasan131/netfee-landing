@@ -1,0 +1,52 @@
+{
+    "name": "NetFee ISP BIlling Software",
+    "short_name": "NetFee ISP BIlling Software",
+    "description": "NetFee is an ISP billing software. Manage your ISP business effectively with bilingual support in Bengali and English, comprehensive management tools, and advanced billing solutions.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#6b21a8",
+    "orientation": "portrait",
+    "scope": "/",
+    "icons": [
+      {
+        "src": "/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "src": "/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "lang": "en",
+    "categories": ["business", "utilities", "billing"],
+    "screenshots": [
+      {
+        "src": "/NetFee-wide.png",
+        "sizes": "1280x720",
+        "type": "image/png",
+        "description": "NetFee dashboard overview.",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/NetFee-narrow.png",
+        "sizes": "720x1280",
+        "type": "image/png",
+        "description": "Detailed reports section in NetFee.",
+        "form_factor": "narrow"
+      }
+    ]
+  }
+  

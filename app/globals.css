@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+/* ── Brand colours (always fixed) ── */
+:root {
+  --primary:  #2E87DF;
+  --secondary: #000000;
+}
+
+/* ── Light theme (default) ── */
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+  --surface:    #f8fafc;
+  --border:     #dde0e4;
+  --muted:      #64748b;
+}
+
+/* ── Dark theme ── */
+[data-theme="dark"] {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --surface:    #1e293b;
+  --border:     #334155;
+  --muted:      #94a3b8;
+}
+
+/* ── System theme — JS handles this, CSS fallback only ── */
+[data-theme="system"] {
+  --background: #ffffff;
+  --foreground: #171717;
+  --surface:    #f8fafc;
+  --border:     #e2e8f0;
+  --muted:      #64748b;
+}
+
+/* ── Tailwind v4 theme tokens ── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface:    var(--surface);
+  --color-border:     var(--border);
+  --color-muted:      var(--muted);
+  --color-primary:    var(--primary);
+  --color-secondary:  var(--secondary);
+  --font-poppins:       var(--font-poppins);
+  --font-hind-siliguri: var(--font-hind-siliguri);
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--background);
+  color:            var(--foreground);
+  font-family: var(--font-poppins), var(--font-hind-siliguri), Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Font helpers ── */
+.font-bn { font-family: var(--font-hind-siliguri), sans-serif; }
+.font-en { font-family: var(--font-poppins), sans-serif; }
+
+/* ── Navbar underline slide animation ── */
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ── Swiper hero pagination ── */
+.hero-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 6px;
+  background: var(--muted);
+  opacity: 1;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.hero-pagination .swiper-pagination-bullet-active {
+  width: 30px;
+  background: var(--primary);
+}
+
+/* ── Swiper fade: keep slides in flow, crossFade handles visibility ── */
+.hero-swiper .swiper-slide {
+  pointer-events: none;
+}
+.hero-swiper .swiper-slide-active {
+  pointer-events: auto;
+}
+
+/* ── Policy page prose styles ── */
+.prose-custom h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-custom h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.prose-custom h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.prose-custom p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.prose-custom ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+.prose-custom ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+.prose-custom a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.prose-custom strong {
+  color: var(--foreground);
+  font-weight: 700;
+}
+
+/* ── Accent dot — adapts to theme ── */
+.accent-dot {
+  background-color: var(--secondary);
+}
+[data-theme="dark"] .accent-dot {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Gallery coverflow pagination ── */
+.gallery-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--border);
+  opacity: 1;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+.gallery-pagination .swiper-pagination-bullet-active {
+  width: 28px;
+  background: var(--primary);
+}
+
+/* ── Gallery swiper built-in pagination ── */
+.gallery-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--border);
+  opacity: 1;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+.gallery-swiper .swiper-pagination-bullet-active {
+  width: 28px;
+  background: var(--primary);
+}
