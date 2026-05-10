@@ -7,9 +7,8 @@ import { motion, useInView } from "framer-motion";
 import { HiOutlineCheckBadge } from "react-icons/hi2";
 import { useTheme } from "../providers/ThemeProvider";
 
-// icons
 import { FaPhoneVolume, FaUsersBetweenLines, FaCommentSms,
-         FaHandshakeSimple, FaMobileRetro, FaServer, FaStreetView } from "react-icons/fa6";
+         FaHandshakeSimple, FaMobileRetro, FaServer, FaStreetView, FaLanguage } from "react-icons/fa6";
 import { IoNotifications, IoDocumentTextSharp, IoSettingsSharp } from "react-icons/io5";
 import { MdVisibility, MdEmail, MdPeopleAlt,
          MdManageAccounts, MdPayments, MdOutlineNetworkWifi } from "react-icons/md";
@@ -18,57 +17,64 @@ import { TbReportSearch } from "react-icons/tb";
 import { RiRobot2Fill } from "react-icons/ri";
 import { SiDiagramsdotnet } from "react-icons/si";
 import { LuDatabaseBackup } from "react-icons/lu";
+import { MdOutlineRouter } from "react-icons/md";
+import { AiFillNotification } from "react-icons/ai";
 
-/* ─── features + positions (from demo code) ─────────────── */
+
+/* ───  features ────────────────────────────────────────── */
 const FEATURES = [
-  { key: "Reports",                            Icon: TbReportSearch,        color: "text-indigo-500",  bg: "bg-indigo-500/10"  },
-  { key: "User Friendly",                      Icon: FaUsersBetweenLines,   color: "text-green-500",   bg: "bg-green-500/10"   },
-  { key: "Notifications",                      Icon: IoNotifications,       color: "text-yellow-500",  bg: "bg-yellow-500/10"  },
-  { key: "Billing Management",                 Icon: IoDocumentTextSharp,   color: "text-orange-500",  bg: "bg-orange-500/10"  },
-  { key: "Accessibility",                      Icon: MdVisibility,          color: "text-purple-500",  bg: "bg-purple-500/10"  },
-  { key: "Customer Support Panel",             Icon: LuSquareUserRound,     color: "text-primary",     bg: "bg-primary/10"     },
-  { key: "Client Management",                  Icon: MdPeopleAlt,           color: "text-primary",     bg: "bg-primary/10"     },
-  { key: "Client Support & Ticketing",         Icon: MdEmail,               color: "text-cyan-500",    bg: "bg-cyan-500/10"    },
-  { key: "Support 24/7",                       Icon: FaPhoneVolume,         color: "text-blue-500",    bg: "bg-blue-500/10"    },
-  { key: "SMS Module",                         Icon: FaCommentSms,          color: "text-rose-500",    bg: "bg-rose-500/10"    },
-  { key: "Basic Client Portal",                Icon: RiRobot2Fill,          color: "text-teal-500",    bg: "bg-teal-500/10"    },
-  { key: "Accounts Management",                Icon: MdManageAccounts,      color: "text-violet-500",  bg: "bg-violet-500/10"  },
-  { key: "Reseller Panel + App",               Icon: FaHandshakeSimple,     color: "text-primary",     bg: "bg-primary/10"     },
-  { key: "Client Mobile App",                  Icon: FaMobileRetro,         color: "text-green-500",   bg: "bg-green-500/10"   },
-  { key: "Web Hook Payment System",            Icon: MdPayments,            color: "text-pink-500",    bg: "bg-pink-500/10"    },
-  { key: "PPPoE & Static",                     Icon: MdOutlineNetworkWifi,  color: "text-sky-500",     bg: "bg-sky-500/10"     },
-  { key: "Salary Management",                  Icon: IoSettingsSharp,       color: "text-amber-500",   bg: "bg-amber-500/10"   },
-  { key: "Multiple Mikrotik Add",              Icon: FaServer,              color: "text-slate-500",   bg: "bg-slate-500/10"   },
-  { key: "Customer Live Bandwidth",            Icon: FaStreetView,          color: "text-primary",     bg: "bg-primary/10"     },
-  { key: "Network Diagram",                    Icon: SiDiagramsdotnet,      color: "text-purple-500",  bg: "bg-purple-500/10"  },
-  { key: "Payment Gateway Integration",        Icon: LuDatabaseBackup,      color: "text-emerald-500", bg: "bg-emerald-500/10" },
-  { key: "bKash Instant Notification(Webhook)",Icon: MdPayments,            color: "text-pink-500",    bg: "bg-pink-500/10"    },
+  { key: "Reports",                      Icon: TbReportSearch,        color: "text-indigo-500",  bg: "bg-indigo-500/10"  },
+  { key: "User Friendly",                Icon: FaUsersBetweenLines,   color: "text-green-500",   bg: "bg-green-500/10"   },
+  { key: "Notifications",                Icon: IoNotifications,       color: "text-yellow-500",  bg: "bg-yellow-500/10"  },
+  { key: "Billing Management",           Icon: IoDocumentTextSharp,   color: "text-orange-500",  bg: "bg-orange-500/10"  },
+  { key: "Accessibility",                Icon: MdVisibility,          color: "text-purple-500",  bg: "bg-purple-500/10"  },
+  { key: "Customer Support",             Icon: LuSquareUserRound,     color: "text-primary",     bg: "bg-primary/10"     },
+  { key: "Client Management",            Icon: MdPeopleAlt,           color: "text-primary",     bg: "bg-primary/10"     },
+  { key: "Support & Ticketing",          Icon: MdEmail,               color: "text-cyan-500",    bg: "bg-cyan-500/10"    },
+  { key: "Support 24/7",                 Icon: FaPhoneVolume,         color: "text-blue-500",    bg: "bg-blue-500/10"    },
+  { key: "SMS Module",                   Icon: FaCommentSms,          color: "text-rose-500",    bg: "bg-rose-500/10"    },
+  { key: "Client Portal",                Icon: RiRobot2Fill,          color: "text-teal-500",    bg: "bg-teal-500/10"    },
+  { key: "Accounts Management",          Icon: MdManageAccounts,      color: "text-violet-500",  bg: "bg-violet-500/10"  },
+  { key: "Reseller Panel",               Icon: FaHandshakeSimple,     color: "text-primary",     bg: "bg-primary/10"     },
+  { key: "Mobile App",                   Icon: FaMobileRetro,         color: "text-green-500",   bg: "bg-green-500/10"   },
+  { key: "Web Hook Payment",             Icon: MdPayments,            color: "text-fuchsia-500", bg: "bg-fuchsia-500/10" },
+  { key: "PPPoE & Static",               Icon: MdOutlineNetworkWifi,  color: "text-sky-500",     bg: "bg-sky-500/10"     },
+  { key: "Salary Management",            Icon: IoSettingsSharp,       color: "text-amber-500",   bg: "bg-amber-500/10"   },
+  { key: "Multiple Mikrotik",            Icon: FaServer,              color: "text-slate-500",   bg: "bg-slate-500/10"   },
+  { key: "Customer Live Bandwidth",      Icon: FaStreetView,          color: "text-primary",     bg: "bg-primary/10"     },
+  { key: "Network Diagram",              Icon: SiDiagramsdotnet,      color: "text-purple-500",  bg: "bg-purple-500/10"  },
+  { key: "Payment Gateway",              Icon: LuDatabaseBackup,      color: "text-emerald-500", bg: "bg-emerald-500/10" },
+  { key: "bKash Instant Notification",   Icon: AiFillNotification,          color: "text-green-600",   bg: "bg-green-600/10"   },
+  { key: "OLT Integration",              Icon: MdOutlineRouter,       color: "text-blue-600",    bg: "bg-blue-600/10"    },
+  { key: "Bangla & English",  Icon: FaLanguage,          color: "text-rose-500",    bg: "bg-rose-500/10"    },
 ];
 
-/* positions — scaled 1.4× from demo to give cards breathing room */
+/* ─── positions — each has a comment with feature name ──── */
 const POSITIONS = [
-  { x: -214, y:  -64 },   //reports
-  { x:  112, y: -224 },
-  { x: -210, y:  112 },
-  { x:  238, y:   98 },
-  { x:  -84, y:  238 },
-  { x:  182, y:  420 },
-  { x:  -70, y:  420 },
-  { x:  238, y:  -70 },
-  { x: -430, y: -170 },   /* Support 24/7  */
-  { x:  406, y: -224 },
-  { x:  112, y:  252 },
-  { x: -155, y: -392 },   //account
-  { x:  364, y:  294 },
-  { x: -392, y:  200 },
-  { x:   56, y: -392 },
-  { x: -446, y:  15 },    //PPPoE
-  { x:  448, y:  126 },
-  { x:  -70, y: -224 },
-  { x:  266, y: -354 },
-  { x: -280, y:  350 },
-  { x:  462, y:  -70 },
-  { x: -350, y: -336 },   /* bKash */
+  { x: -214, y:  -64  }, /* 0  Reports                          */
+  { x:  112, y: -224  }, /* 1  User Friendly                    */
+  { x: -210, y:  112  }, /* 2  Notifications                    */
+  { x:  238, y:   98  }, /* 3  Billing Management               */
+  { x:  -84, y:  238  }, /* 4  Accessibility                    */
+  { x:  182, y:  420  }, /* 5  Customer Support Panel           */
+  { x:  -70, y:  420  }, /* 6  Client Management                */
+  { x:  238, y:  -70  }, /* 7  Client Support & Ticketing       */
+  { x: -430, y: -170  }, /* 8  Support 24/7                     */
+  { x:  406, y: -224  }, /* 9  SMS Module                       */
+  { x:  112, y:  252  }, /* 10 Basic Client Portal              */
+  { x: -155, y: -392  }, /* 11 Accounts Management              */
+  { x:  364, y:  294  }, /* 12 Reseller Panel + App             */
+  { x: -392, y:  200  }, /* 13 Client Mobile App                */
+  { x:   56, y: -392  }, /* 14 Web Hook Payment System          */
+  { x: -446, y:   15  }, /* 15 PPPoE & Static                   */
+  { x:  448, y:  126  }, /* 16 Salary Management                */
+  { x:  -70, y: -224  }, /* 17 Multiple Mikrotik Add            */
+  { x:  266, y: -354  }, /* 18 Customer Live Bandwidth          */
+  { x: -280, y:  350  }, /* 19 Network Diagram                  */
+  { x:  462, y:  -70  }, /* 20 Payment Gateway Integration      */
+  { x: -350, y: -336  }, /* 21 bKash Instant Notification       */
+  { x:  430, y:  170  }, /* 22 OLT Limit  ← opposite of 15 PPPoE */
+  { x: -280, y: -170  }, /* 23 Language (Bangla & English) ← opposite of 22 OLT */
 ];
 
 export default function FeaturesSection() {
@@ -93,7 +99,6 @@ export default function FeaturesSection() {
       id="features"
       className="relative overflow-hidden bg-surface py-20 lg:py-28"
     >
-      {/* dot grid bg */}
       <div className="absolute inset-0 pointer-events-none"
            style={{
              backgroundImage: "radial-gradient(var(--border) 1px, transparent 1px)",
@@ -103,7 +108,7 @@ export default function FeaturesSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* ── header ── */}
+        {/* header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -125,38 +130,34 @@ export default function FeaturesSection() {
           </p>
         </motion.div>
 
-        {/* ══ DESKTOP — orbit layout ══ */}
+        {/* ══ DESKTOP ══ */}
         <div className="hidden md:flex items-center justify-center">
-          <div
-            className="relative flex items-center justify-center"
-            style={{ width: "1100px", height: "1000px" }}
-          >
-            {/* center logo circle */}
+          <div className="relative flex items-center justify-center"
+               style={{ width: "1100px", height: "1000px" }}>
+
+            {/* center logo */}
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={inView ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6, ease: "easeOut" }}
+              whileHover={{
+                scale: 1.08,
+                boxShadow: "0 0 40px 8px rgba(46,135,223,0.35), 0 0 80px 20px rgba(46,135,223,0.15)",
+              }}
               className="absolute z-10 flex flex-col items-center justify-center
-                         w-40 h-40 rounded-full
+                         w-40 h-40 rounded-full cursor-pointer
                          bg-background border-4 border-primary/25
-                         shadow-2xl shadow-primary/20"
+                         shadow-2xl shadow-primary/20
+                         transition-colors duration-300 hover:border-primary/60"
             >
-              <Image
-                src={logoSrc}
-                alt="NetFee"
-                width={110}
-                height={70}
-                className="object-contain"
-              />
-              <p className={`text-[10px] text-muted mt-1 font-semibold ${font}`}>
-                ISP Billing
-              </p>
+              <Image src={logoSrc} alt="NetFee" width={110} height={70} className="object-contain" />
+              <p className={`text-[10px] text-muted mt-1 font-semibold ${font}`}>ISP Billing</p>
             </motion.div>
 
-            {/* feature cards — fly in from outside */}
+            {/* feature cards */}
             {FEATURES.map((feat, i) => {
               const { x, y } = POSITIONS[i];
-              const dist = Math.sqrt(x * x + y * y);
+              const dist   = Math.sqrt(x * x + y * y);
               const startX = (x / dist) * (dist + 220);
               const startY = (y / dist) * (dist + 220);
 
@@ -168,43 +169,46 @@ export default function FeaturesSection() {
                   transition={{ duration: 0.9, delay: i * 0.04, ease: "easeOut" }}
                   whileHover={{ scale: 1.08, zIndex: 30 }}
                   className="absolute z-20 flex flex-col items-center gap-2
-                             w-41 text-center cursor-default border border-border p-4 rounded-2xl
-                           hover:border-primary/40 hover:shadow-md
-                           transition-all duration-200"
+                             w-37 text-center cursor-default"
                 >
-                  {/* card */}
-                  <div className={`w-13 h-13 rounded-full flex items-center justify-center
-                                   border border-border bg-background
-                                   shadow-md hover:shadow-lg hover:border-primary/40
-                                   transition-all duration-200
-                                   ${feat.bg}`}>
-                    <feat.Icon className={`text-2xl ${feat.color}`} />
+                  {/* gradient card — same style as about cards */}
+                  <div className={`w-full flex flex-col items-center justify-between gap-2 p-3.5
+                                   rounded-2xl border border-primary/15
+                                   bg-linear-to-br from-primary/15 via-primary/5 to-background
+                                   shadow-sm hover:shadow-md hover:border-primary/35
+                                   transition-all duration-200`}>
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center
+                                     ${feat.bg} shrink-0`}>
+                      <feat.Icon className={`text-xl ${feat.color}`} />
+                    </div>
+                    <p className={`text-sm font-semibold text-foreground leading-tight ${font}`}>
+                      {t(feat.key)}
+                    </p>
                   </div>
-                  <p className={`text-sm font-semibold text-foreground leading-tight ${font}`}>
-                    {t(feat.key)}
-                  </p>
                 </motion.div>
               );
             })}
           </div>
         </div>
 
-        {/* ══════════════════════════════════════════
-            MOBILE — logo + grid
-        ══════════════════════════════════════════ */}
+        {/* ══ MOBILE ══ */}
         <div className="md:hidden">
           <motion.div
             initial={{ opacity: 0, scale: 0.7 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="flex justify-center mb-8"
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "0 0 30px 6px rgba(46,135,223,0.30), 0 0 60px 16px rgba(46,135,223,0.12)",
+            }}
+            className="mb-8 cursor-pointer rounded-2xl overflow-hidden"
           >
-            <div className="w-35 h-20 rounded-2xl bg-background border-4
-                            border-primary/20 shadow-xl flex flex-col items-center justify-center">
+            <div className="w-full rounded-2xl bg-background border-4
+                            border-primary/20 hover:border-primary/60
+                            shadow-xl flex flex-col items-center justify-center py-6
+                            transition-colors duration-300">
               <Image src={logoSrc} alt="NetFee" width={80} height={52} className="object-contain" />
-              <p className={`text-[10px] text-muted mt-2 font-semibold ${font}`}>
-                ISP Billing
-              </p>
+              <p className={`text-[10px] text-muted mt-2 font-semibold ${font}`}>ISP Billing</p>
             </div>
           </motion.div>
 
@@ -216,12 +220,12 @@ export default function FeaturesSection() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.04 }}
                 className="flex flex-col items-center gap-2.5 p-4 rounded-2xl
-                           bg-background border border-border text-center
-                           hover:border-primary/40 hover:shadow-md
+                           border border-primary/15
+                           bg-linear-to-br from-primary/15 via-primary/5 to-background
+                           text-center hover:border-primary/35 hover:shadow-md
                            transition-all duration-200"
               >
-                <div className={`w-11 h-11 rounded-xl flex items-center justify-center
-                                 ${feat.bg}`}>
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${feat.bg}`}>
                   <feat.Icon className={`text-xl ${feat.color}`} />
                 </div>
                 <p className={`text-xs font-semibold text-foreground leading-tight ${font}`}>
@@ -232,6 +236,20 @@ export default function FeaturesSection() {
           </div>
         </div>
 
+        {/* count badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="mt-10 flex justify-center"
+        >
+          <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full
+                           bg-primary text-white text-sm font-semibold
+                           shadow-lg shadow-primary/25 ${font}`}>
+            <HiOutlineCheckBadge className="w-4 h-4" />
+            {FEATURES.length}+ {t("features.badge")}
+          </div>
+        </motion.div>
 
       </div>
     </section>

@@ -11,7 +11,7 @@ import { HiOutlineCheckBadge } from "react-icons/hi2";
 /* ─── team data ──────────────────────────────────────────── */
 const TEAM = [
   {
-    nameKey: "Songit Mia",
+    nameKey: "Mohammad Songit",
     roleKey: "Support Executive",
     descKey: "Netfee is the software with Possibilities and Songit Mia is working as a Senior Executive to achieve higher goals.",
     img:   "/images/support/songit.jpg",
@@ -22,7 +22,7 @@ const TEAM = [
     nameKey: "Ibnul Zarrah",
     roleKey: "Support Executive",
     descKey: "Ibnul Zarrah has been serving in the marketing team with confidence as well as providing technical support.",
-    img:   "/images/support/ibnul.png",
+    img:   "/images/support/ibnul-zarrah.jpeg",
     phone: "01896192293",
     fb:    null,
   },
@@ -182,7 +182,7 @@ export default function SupportSection() {
              opacity: 0.5,
            }} />
 
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px]
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-75
                       rounded-full blur-3xl pointer-events-none"
            style={{ background: "radial-gradient(ellipse, rgba(46,135,223,0.08) 0%, transparent 70%)" }} />
 

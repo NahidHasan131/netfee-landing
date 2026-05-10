@@ -47,25 +47,28 @@ const CARDS = [
     icon: <HiOutlineLightBulb className="w-6 h-6" />,
     titleKey: "about.card1.title",
     descKey:  "about.card1.desc",
-    color: "from-primary/10 to-primary/5",
-    iconColor: "text-primary",
-    border: "border-primary/20",
+    color:    "from-primary/25 via-primary/5 to-background",
+    iconColor:"text-primary",
+    iconBg:   "bg-primary/15",
+    border:   "border-primary/15",
   },
   {
     icon: <HiOutlineUserGroup className="w-6 h-6" />,
     titleKey: "about.card2.title",
     descKey:  "about.card2.desc",
-    color: "from-primary/10 to-primary/5",
-    iconColor: "text-primary",
-    border: "border-primary/20",
+    color:    "from-primary/25 via-primary/5 to-background",
+    iconColor:"text-primary",
+    iconBg:   "bg-primary/15",
+    border:   "border-primary/15",
   },
   {
     icon: <HiOutlineChartBar className="w-6 h-6" />,
     titleKey: "about.card3.title",
     descKey:  "about.card3.desc",
-    color: "from-primary/10 to-primary/5",
-    iconColor: "text-primary",
-    border: "border-primary/20",
+    color:    "from-primary/25 via-primary/5 to-background",
+    iconColor:"text-primary",
+    iconBg:   "bg-primary/15",
+    border:   "border-primary/15",
   },
 ];
 
@@ -73,7 +76,7 @@ const CARDS = [
 const STATS = [
   { end: 800,   suffix: "+",  decimals: 0, labelKey: "about.stats.users"  },
   { end: 99.99, suffix: "%",  decimals: 2, labelKey: "about.stats.uptime" },
-  { end: 150,   suffix: "+",  decimals: 0, labelKey: "about.stats.isp"    },
+  { end: 300,   suffix: "+",  decimals: 0, labelKey: "about.stats.isp"    },
 ];
 
 /* ─── animation variants ─── */
@@ -176,7 +179,7 @@ export default function AboutSection() {
             >
               {/* icon */}
               <div className={`inline-flex items-center justify-center
-                               w-12 h-12 rounded-xl bg-background
+                               w-12 h-12 rounded-2xl ${card.iconBg}
                                shadow-sm mb-5 ${card.iconColor}`}>
                 {card.icon}
               </div>

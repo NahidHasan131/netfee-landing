@@ -45,7 +45,7 @@ function PlanRow({ plan, idx, inView, t, font }) {
       {/* left accent bar on hover */}
       <td className="relative py-3 px-4 text-center">
         <span
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] rounded-r-full
+          className="absolute left-0 top-1/2 -translate-y-1/2 w-0.75 rounded-r-full
                      bg-primary transition-all duration-200"
           style={{ height: hovered ? "70%" : "0%" }}
         />
@@ -104,7 +104,7 @@ export default function PricingSection() {
              backgroundSize: "32px 32px",
              opacity: 0.4,
            }} />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px]
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-75
                       rounded-full blur-3xl pointer-events-none"
            style={{ background: "radial-gradient(ellipse, rgba(46,135,223,0.08) 0%, transparent 70%)" }} />
 
@@ -212,7 +212,7 @@ export default function PricingSection() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className={`text-center font-semibold text-sm text-muted mt-5 ${font}`}
+          className={`text-center font-semibold text-sm text-primary/70 mt-5 ${font}`}
         >
           * All prices are in BDT (Bangladeshi Taka). OTC = One Time Charge.
         </motion.p>

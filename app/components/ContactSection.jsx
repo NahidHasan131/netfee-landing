@@ -110,7 +110,8 @@ export default function ContactSection() {
                          transition-all duration-300"
             >
               {/* map — top */}
-              <div className="relative overflow-hidden" style={{ height: "260px" }}>
+              <div className="relative overflow-hidden border-b-2 border-primary/30"
+                   style={{ height: "260px" }}>
                 <iframe
                   src={office.mapSrc}
                   width="100%"

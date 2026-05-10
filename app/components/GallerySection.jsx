@@ -114,7 +114,7 @@ export default function GallerySection() {
               >
                 {/* padding-based border — doesn't affect slide width */}
                 <div className="rounded-2xl shadow-xl overflow-hidden"
-                     style={{ padding: "4px", background: "var(--secondary)" }}>
+                     style={{ padding: "3px", background: "rgba(46,135,223,0.45)" }}>
                   <div className="relative w-full rounded-xl overflow-hidden"
                        style={{ height: "492px" }}>
                     <Image

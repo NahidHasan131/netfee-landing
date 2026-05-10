@@ -26,6 +26,7 @@ const NAV_ITEMS = [
   { key: "Support Team", href: "/support-team" },
   { key: "Contact",      href: "/contact-us" },
   { key: "App Store",    href: "/app-store" },
+  { key: "Tutorial",     href: "/tutorial" },
 ];
 
 const THEME_ICONS = {

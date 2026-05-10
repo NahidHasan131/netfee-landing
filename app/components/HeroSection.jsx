@@ -10,7 +10,11 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
-import { HiArrowRight, HiOutlineUserCircle, HiOutlineUsers, HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { HiArrowRight, HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { FaUserGear } from "react-icons/fa6";
+import { FaUsers } from "react-icons/fa";
+
+
 
 /* ─── data ───────────────────────────────────────────────── */
 const PEOPLE = [
@@ -40,12 +44,12 @@ export default function HeroSection() {
 
       {/* ── bg blobs ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[460px] h-[460px]
+        <div className="absolute top-[-20%] left-[-10%] w-115 h-130
                         rounded-full blur-[120px] animate-pulse"
-             style={{ background: "rgba(46,135,223,0.22)" }} />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px]
+             style={{ background: "rgba(46,135,223,0.30)" }} />
+        <div className="absolute bottom-[-20%] right-[-10%] w-110 h-120
                         rounded-full blur-[120px] animate-pulse"
-             style={{ background: "rgba(107,31,139,0.18)" }} />
+             style={{ background: "rgba(46,135,223,0.30)" }} />
         <div className="absolute inset-0"
              style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, rgba(0,0,0,0.04) 100%)" }} />
       </div>
@@ -103,7 +107,7 @@ export default function HeroSection() {
                                   hover:from-primary/90 hover:to-primary
                                   hover:scale-[1.03] active:scale-[0.98]
                                   transition-all duration-200 shadow-lg shadow-primary/30 ${font}`}>
-                      <HiOutlineUserCircle className="text-xl shrink-0" />
+                      <FaUserGear className="text-xl shrink-0" />
                       {t("Admin Login")}
                     </Link>
 
@@ -114,7 +118,7 @@ export default function HeroSection() {
                                   hover:bg-secondary/5 hover:text-secondary hover:border-secondary
                                   hover:scale-[1.03] active:scale-[0.98]
                                   transition-all duration-200 ${font}`}>
-                      <HiOutlineUsers className="text-xl shrink-0" />
+                      <FaUsers className="text-xl shrink-0" />
                       {t("Customer Login")}
                     </Link>
 
@@ -137,7 +141,7 @@ export default function HeroSection() {
                         </div>
                       ))}
                     </div>
-                    <p className={`text-sm text-muted ${font}`}>{t("Trusted by 500+ ISP Providers")}</p>
+                    <p className={`text-sm text-muted ${font}`}>{t("Trusted by 1k+ ISP Providers")}</p>
                   </div>
                 </div>
 
