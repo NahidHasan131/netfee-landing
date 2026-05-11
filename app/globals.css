@@ -185,3 +185,13 @@ body {
   width: 28px;
   background: var(--primary);
 }
+
+/* ── Policy prose font inheritance ── */
+.font-bn .prose-custom h2,
+.font-bn .prose-custom h3,
+.font-bn .prose-custom h4,
+.font-bn .prose-custom p,
+.font-bn .prose-custom li,
+.font-bn .prose-custom a {
+  font-family: var(--font-hind-siliguri), sans-serif;
+}

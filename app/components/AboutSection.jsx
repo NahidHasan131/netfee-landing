@@ -156,7 +156,7 @@ export default function AboutSection() {
             variants={fadeUp} custom={1}
             initial="hidden" animate={inView ? "visible" : "hidden"}
           >
-            <p className={`text-lg font-semibold text-foreground mb-4 ${font}`}>
+            <p className={`text-xl font-semibold text-foreground mb-4 ${font}`}>
               {t("about.subheadline")}
             </p>
             <p className={`text-base text-muted leading-relaxed ${font}`}>

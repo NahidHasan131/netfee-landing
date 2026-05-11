@@ -34,7 +34,7 @@ const APPS = [
     versionKey: "app.sms.version",
     descKey:    "app.sms.desc",
     img:        "/logo/sms-responder.png",
-    apk:        "/apk/netFee_SMS_Responder_v2.1.apk",
+    apk:        "/apk/netFee_SMS_Responder_13_April.apk",
     color:      "from-violet-500/10 to-purple-500/5",
     iconBg:     "bg-violet-500/10",
     badge:      "bg-violet-500/15 text-violet-600",

@@ -115,8 +115,8 @@ export default function GallerySection() {
             }}
             className="gallery-swiper w-full py-10 pb-14"
           >
-            {/* duplicate images so loop always has enough slides */}
-            {[...IMAGES, ...IMAGES].map((src, i) => (
+            {/* 14 images — enough for loop without duplicates */}
+            {IMAGES.map((src, i) => (
               <SwiperSlide
                 key={i}
                 className="rounded-2xl overflow-hidden"
@@ -128,7 +128,7 @@ export default function GallerySection() {
                        style={{ height: "530px" }}>
                     <Image
                       src={src}
-                      alt={`NetFee showcase ${(i % IMAGES.length) + 1}`}
+                      alt={`NetFee showcase ${i + 1}`}
                       fill
                       className="object-center object-fill"
                     />
