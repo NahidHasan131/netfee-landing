@@ -99,12 +99,12 @@ export default function FeaturesSection() {
       id="features"
       className="relative overflow-hidden bg-surface py-20 lg:py-28"
     >
-      <div className="absolute inset-0 pointer-events-none"
+      {/* <div className="absolute inset-0 pointer-events-none"
            style={{
              backgroundImage: "radial-gradient(var(--border) 1px, transparent 1px)",
              backgroundSize: "32px 32px",
              opacity: 0.5,
-           }} />
+           }} /> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

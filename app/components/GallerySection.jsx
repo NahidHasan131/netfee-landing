@@ -12,11 +12,20 @@ import "swiper/css/pagination";
 import { HiOutlineCheckBadge } from "react-icons/hi2";
 
 const IMAGES = [
-  "/images/showcase1.jpg",
-  "/images/showcase2.jpg",
-  "/images/showcase3.jpg",
-  "/images/showcase4.jpg",
-  "/images/showcase5.jpg",
+  "/images/gallery/showcase1.jpg",
+  "/images/gallery/showcase2.jpg",
+  "/images/gallery/showcase3.jpg",
+  "/images/gallery/showcase4.jpg",
+  "/images/gallery/showcase5.jpg",
+  "/images/gallery/showcase6.jpg",
+  "/images/gallery/showcase7.jpg",
+  "/images/gallery/showcase8.jpg",
+  "/images/gallery/showcase9.jpg",
+  "/images/gallery/showcase10.jpg",
+  "/images/gallery/showcase11.jpg",
+  "/images/gallery/showcase12.jpg",
+  "/images/gallery/showcase13.jpg",
+  "/images/gallery/showcase14.jpg",
 ];
 
 export default function GallerySection() {
@@ -34,18 +43,18 @@ export default function GallerySection() {
       className="relative overflow-hidden bg-background py-20 lg:py-28"
     >
       {/* bg dot grid */}
-      <div className="absolute inset-0 pointer-events-none"
+      {/* <div className="absolute inset-0 pointer-events-none"
            style={{
              backgroundImage: "radial-gradient(var(--border) 1px, transparent 1px)",
              backgroundSize: "32px 32px",
              opacity: 0.4,
-           }} />
+           }} /> */}
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-75
                       rounded-full blur-3xl pointer-events-none"
            style={{ background: "radial-gradient(ellipse, rgba(46,135,223,0.08) 0%, transparent 70%)" }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── header ── */}
         <motion.div
@@ -116,12 +125,12 @@ export default function GallerySection() {
                 <div className="rounded-2xl shadow-xl overflow-hidden"
                      style={{ padding: "3px", background: "rgba(46,135,223,0.45)" }}>
                   <div className="relative w-full rounded-xl overflow-hidden"
-                       style={{ height: "492px" }}>
+                       style={{ height: "530px" }}>
                     <Image
                       src={src}
                       alt={`NetFee showcase ${(i % IMAGES.length) + 1}`}
                       fill
-                      className="object-cover object-center"
+                      className="object-center object-fill"
                     />
                   </div>
                 </div>
