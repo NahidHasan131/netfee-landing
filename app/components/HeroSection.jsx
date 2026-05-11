@@ -78,8 +78,8 @@ export default function HeroSection() {
                   {/* badge */}
                   <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full
                                    bg-surface border border-border mb-6 ${font}`}>
-                    <span className="text-[10px] uppercase tracking-[2px] font-bold text-muted">
-                      {t("Next-Gen ISP Solution")}
+                    <span className="text-[10px] uppercase font-bold text-muted">
+                      {t("Smart ISP Solution")}
                     </span>
                   </div>
 

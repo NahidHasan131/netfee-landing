@@ -25,8 +25,8 @@ const NAV_ITEMS = [
   { key: "Pricing",      href: "/pricing" },
   { key: "Support Team", href: "/support-team" },
   { key: "Contact",      href: "/contact-us" },
-  { key: "App Store",    href: "/app-store" },
   { key: "Tutorial",     href: "/tutorial" },
+  { key: "App Store",    href: "/app-store" },
 ];
 
 const THEME_ICONS = {
@@ -131,7 +131,7 @@ export default function Navbar() {
               {/* Language */}
               <div className="relative" ref={langRef}>
                 <button onClick={() => { setLangOpen((p) => !p); setThemeOpen(false); }}
-                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface hover:border-primary transition-all duration-200" aria-label="Switch language" >
+                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface hover:border-primary transition-all duration-200" aria-label="Switch language" style={{ cursor: "pointer" }} >
                   <Image src={currentLang.flag} alt={currentLang.full} width={22} height={16} className="rounded-sm object-cover"/>
                   <HiOutlineChevronDown className={`w-3.5 h-3.5 text-muted transition-transform duration-200
                       ${langOpen ? "rotate-180" : ""}`} />
@@ -165,7 +165,7 @@ export default function Navbar() {
               {/* Theme */}
               <div className="relative" ref={themeRef}>
                 <button onClick={() => { setThemeOpen((p) => !p); setLangOpen(false); }}
-                  className="flex items-center justify-center w-9 h-9 rounded-lg border border-border bg-surface text-foreground hover:border-primary hover:text-primary transition-all duration-200" aria-label="Switch theme" >
+                  className="flex items-center justify-center w-9 h-9 rounded-lg border border-border bg-surface text-foreground hover:border-primary hover:text-primary transition-all duration-200" aria-label="Switch theme" style={{ cursor: "pointer" }} >
                   {THEME_ICONS[theme]}
                 </button>
 

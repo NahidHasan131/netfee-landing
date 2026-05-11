@@ -24,7 +24,7 @@ const TEAM = [
     descKey: "Ibnul Zarrah has been serving in the marketing team with confidence as well as providing technical support.",
     img:   "/images/support/ibnul-zarrah.jpeg",
     phone: "01896192293",
-    fb:    null,
+    fb:    "https://www.facebook.com/netfeebd",
   },
   {
     nameKey: "Muhammad Abu Hasan",
@@ -48,7 +48,7 @@ const TEAM = [
     descKey: "Netfee is a software developed by Possibilities, where Rashidul Islam is working as a Junior Executive to achieve higher goals.",
     img:   "/images/support/Rashed.jpg",
     phone: "01896192227",
-    fb:    null,
+    fb:    "https://www.facebook.com/netfeebd",
   },
   {
     nameKey: "Mst. Mouri Khatun",
@@ -56,7 +56,7 @@ const TEAM = [
     descKey: "Netfee is a software developed by Possibilities, where Ms. Mst. Mouri Khatun is working as a Junior Executive to achieve higher goals.",
     img:   "/images/support/Mouri Khatun.jpeg",
     phone: "01896192208",
-    fb:    null,
+    fb:    "https://www.facebook.com/netfeebd",
   },
 ];
 

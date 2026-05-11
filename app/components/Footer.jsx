@@ -9,6 +9,7 @@ import {
   HiOutlineLocationMarker,
   HiOutlinePhone,
 } from "react-icons/hi";
+import { FaFacebook, FaYoutube, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 // const NAV_LINKS = [
 //   { key: "Home",         href: "/"             },
@@ -22,8 +23,9 @@ const POLICIES = [
   { key: "Privacy Policy",         href: "/privacy-policy"       },
   { key: "Terms & Conditions",     href: "/terms-conditions"     },
   { key: "Return & Refund Policy", href: "/return-refund-policy" },
-  { key: "About Us",     href: "/about-us"     },
-  { key: "App Store",    href: "/app-store"    },
+  { key: "About Us",               href: "/about-us"             },
+  { key: "Tutorial",               href: "/tutorial"             },
+  { key: "App Store",              href: "/app-store"            },
 ];
 
 export default function Footer() {
@@ -69,16 +71,61 @@ export default function Footer() {
               {t("footer.tagline")}
             </p>
 
-             {/* email */}
-              <div className="flex items-start gap-3">
-                <span className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <HiOutlineMail className="w-8 h-8 text-primary" />
-                </span>
-                <div>
-                  <p className={` font-semibold text-white uppercase tracking-wider mb-0.5 ${font}`}>{t("footer.email.label")}</p>
-                  <a href="mailto:netfeebd@gmail.com"
-                     className={` text-white hover:text-primary transition-colors ${font}`}>
-                    netfeebd@gmail.com
+             {/* email + divider + social — same row */}
+              <div className="flex items-center gap-4 flex-wrap">
+
+                {/* email */}
+                <div className="flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+                    <HiOutlineMail className="w-5 h-5 text-primary" />
+                  </span>
+                  <div>
+                    <p className={`text-[11px] font-semibold text-white/50 uppercase tracking-wider mb-0.5 ${font}`}>
+                      {t("footer.email.label")}
+                    </p>
+                    <a href="mailto:netfeebd@gmail.com"
+                       className={`text-sm text-white hover:text-primary transition-colors ${font}`}>
+                      netfeebd@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* vertical divider */}
+                <div className="w-px h-10 bg-white/15 shrink-0" />
+
+                {/* social icons */}
+                <div className="flex items-center gap-2">
+                  <a href="https://www.facebook.com/netfeebd"
+                     target="_blank" rel="noopener noreferrer"
+                     className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center
+                                text-white/60 hover:bg-[#1877F2] hover:text-white
+                                transition-all duration-200"
+                     aria-label="Facebook">
+                    <FaFacebook className="w-4 h-4" />
+                  </a>
+                  <a href="https://www.youtube.com/@shunnoit"
+                     target="_blank" rel="noopener noreferrer"
+                     className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center
+                                text-white/60 hover:bg-[#FF0000] hover:text-white
+                                transition-all duration-200"
+                     aria-label="YouTube">
+                    <FaYoutube className="w-4 h-4" />
+                  </a>
+                  <a href="https://wa.me/8801896192222"
+                     target="_blank" rel="noopener noreferrer"
+                     className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center
+                                text-white/60 hover:bg-[#25D366] hover:text-white
+                                transition-all duration-200"
+                     aria-label="WhatsApp">
+                    <FaWhatsapp className="w-4 h-4" />
+                  </a>
+                  <a href="https://www.linkedin.com/company/shunno-it/"
+                     target="_blank" rel="noopener noreferrer"
+                     className="w-9 h-9 rounded-lg bg-white/8 flex items-center justify-center
+                                text-white/60 hover:bg-[#0A66C2] hover:text-white
+                                transition-all duration-200"
+                     aria-label="LinkedIn">
+                    <FaLinkedin className="w-4 h-4" />
                   </a>
                 </div>
               </div>
@@ -250,7 +297,14 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
                         flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className={`text-xs text-white ${font}`}>
-            {t("footer.copyright")}
+            Copyright ©{" "}
+            <a href="https://shunnoit.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="hover:text-primary transition-colors underline underline-offset-2 cursor-pointer">
+              Shunno IT
+            </a>
+            . 2026 All Rights Reserved
           </p>
           <div className="flex items-center gap-5 flex-wrap justify-center">
             {POLICIES.map(({ key, href }) => (

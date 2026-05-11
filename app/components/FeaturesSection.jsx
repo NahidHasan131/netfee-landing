@@ -23,10 +23,10 @@ import { AiFillNotification } from "react-icons/ai";
 
 /* ───  features ────────────────────────────────────────── */
 const FEATURES = [
-  { key: "Reports",                      Icon: TbReportSearch,        color: "text-indigo-500",  bg: "bg-indigo-500/10"  },
+  { key: "Billing Management",           Icon: IoDocumentTextSharp,   color: "text-orange-500",  bg: "bg-orange-500/10"  },
   { key: "User Friendly",                Icon: FaUsersBetweenLines,   color: "text-green-500",   bg: "bg-green-500/10"   },
   { key: "Notifications",                Icon: IoNotifications,       color: "text-yellow-500",  bg: "bg-yellow-500/10"  },
-  { key: "Billing Management",           Icon: IoDocumentTextSharp,   color: "text-orange-500",  bg: "bg-orange-500/10"  },
+  { key: "Reports",                      Icon: TbReportSearch,        color: "text-indigo-500",  bg: "bg-indigo-500/10"  },
   { key: "Accessibility",                Icon: MdVisibility,          color: "text-purple-500",  bg: "bg-purple-500/10"  },
   { key: "Customer Support",             Icon: LuSquareUserRound,     color: "text-primary",     bg: "bg-primary/10"     },
   { key: "Client Management",            Icon: MdPeopleAlt,           color: "text-primary",     bg: "bg-primary/10"     },
@@ -51,30 +51,30 @@ const FEATURES = [
 
 /* ─── positions — each has a comment with feature name ──── */
 const POSITIONS = [
-  { x: -214, y:  -64  }, /* 0  Reports                          */
-  { x:  112, y: -224  }, /* 1  User Friendly                    */
-  { x: -210, y:  112  }, /* 2  Notifications                    */
-  { x:  238, y:   98  }, /* 3  Billing Management               */
-  { x:  -84, y:  238  }, /* 4  Accessibility                    */
-  { x:  182, y:  420  }, /* 5  Customer Support Panel           */
-  { x:  -70, y:  420  }, /* 6  Client Management                */
-  { x:  238, y:  -70  }, /* 7  Client Support & Ticketing       */
-  { x: -430, y: -170  }, /* 8  Support 24/7                     */
-  { x:  406, y: -224  }, /* 9  SMS Module                       */
-  { x:  112, y:  252  }, /* 10 Basic Client Portal              */
-  { x: -155, y: -392  }, /* 11 Accounts Management              */
-  { x:  364, y:  294  }, /* 12 Reseller Panel + App             */
-  { x: -392, y:  200  }, /* 13 Client Mobile App                */
-  { x:   56, y: -392  }, /* 14 Web Hook Payment System          */
-  { x: -446, y:   15  }, /* 15 PPPoE & Static                   */
-  { x:  448, y:  126  }, /* 16 Salary Management                */
-  { x:  -70, y: -224  }, /* 17 Multiple Mikrotik Add            */
-  { x:  266, y: -354  }, /* 18 Customer Live Bandwidth          */
-  { x: -280, y:  350  }, /* 19 Network Diagram                  */
-  { x:  462, y:  -70  }, /* 20 Payment Gateway Integration      */
-  { x: -350, y: -336  }, /* 21 bKash Instant Notification       */
-  { x:  430, y:  170  }, /* 22 OLT Limit  ← opposite of 15 PPPoE */
-  { x: -280, y: -170  }, /* 23 Language (Bangla & English) ← opposite of 22 OLT */
+  { x: -214, y:  -44  }, /* 0  Billing Management               */
+  { x:  112, y: -194  }, /* 1  User Friendly                    */
+  { x: -210, y:  102  }, /* 2  Notifications                    */
+  { x:  238, y:  102  }, /* 3  Reports                          */
+  { x:  -70, y:  240  }, /* 4  Accessibility                    */
+  { x:  112, y:  420  }, /* 5  Customer Support Panel           */
+  { x:  -72, y:  420  }, /* 6  Client Management                */
+  { x:  238, y:  -44  }, /* 7  Client Support & Ticketing       */
+  { x: -380, y: -190  }, /* 8  Support 24/7                     */
+  { x:  410, y: -190  }, /* 9  SMS Module                       */
+  { x:  112, y:  240  }, /* 10  Client Portal              */
+  { x: -72,  y: -392  }, /* 11 Accounts Management              */
+  { x:  300, y:  370  }, /* 12 Reseller Panel + App             */
+  { x: -380, y:  240  }, /* 13 Mobile App                */
+  { x:  108, y: -392  }, /* 14 Web Hook Payment System          */
+  { x: -446, y:  100  }, /* 15 PPPoE & Static                   */
+  { x:  462, y:  106  }, /* 16 Salary Management                */
+  { x:  -70, y: -194  }, /* 17 Multiple Mikrotik Add            */
+  { x:  296, y: -336  }, /* 18 Customer Live Bandwidth          */
+  { x: -260, y:  370  }, /* 19 Network Diagram                  */
+  { x:  462, y:  -40  }, /* 20 Payment Gateway       */
+  { x: -260, y: -336  }, /* 21 bKash Instant Notification       */
+  { x:  410, y:  240  }, /* 22 OLT Limit  ← opposite of 15 PPPoE */
+  { x: -440, y: -40   }, /* 23 Language (Bangla & English) ← opposite of 22 OLT */
 ];
 
 export default function FeaturesSection() {
@@ -167,16 +167,18 @@ export default function FeaturesSection() {
                   initial={{ x: startX, y: startY, opacity: 0, scale: 0.75 }}
                   animate={inView ? { x, y, opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.9, delay: i * 0.04, ease: "easeOut" }}
-                  whileHover={{ scale: 1.08, zIndex: 30 }}
+                  whileHover={{ zIndex: 30 }}
                   className="absolute z-20 flex flex-col items-center gap-2
                              w-37 text-center cursor-default"
                 >
                   {/* gradient card — same style as about cards */}
                   <div className={`w-full flex flex-col items-center justify-between gap-2 p-3.5
                                    rounded-2xl border border-primary/15
-                                   bg-linear-to-br from-primary/15 via-primary/5 to-background
-                                   shadow-sm hover:shadow-md hover:border-primary/35
-                                   transition-all duration-200`}>
+                                   bg-linear-to-br from-primary/5 via-primary/5 to-background
+                                   shadow-sm hover:shadow-lg hover:shadow-primary/15
+                                   hover:border-primary/40 hover:-translate-y-0.5
+                                   transition-all duration-300 ease-out`}
+                       style={{ minHeight: "96px" }}>
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center
                                      ${feat.bg} shrink-0`}>
                       <feat.Icon className={`text-xl ${feat.color}`} />

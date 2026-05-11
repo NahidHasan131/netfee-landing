@@ -79,8 +79,8 @@ function VideoCard({ video, isBn, idx, inView, onExpand }) {
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.4, delay: (idx % PER_PAGE) * 0.03 }}
-      className="group flex flex-col rounded-2xl overflow-hidden border-3 border-primary/20
-                 bg-background hover:border-primary/70 hover:shadow-xl hover:shadow-primary/20
+      className="group flex flex-col rounded-2xl overflow-hidden border-3 border-primary/40
+                 bg-background hover:border-primary/80 hover:shadow-xl hover:shadow-primary/20
                  transition-all duration-300"
     >
       {/* video / thumbnail area */}
@@ -113,12 +113,12 @@ function VideoCard({ video, isBn, idx, inView, onExpand }) {
             <button
               onClick={() => setPlaying(true)}
               className="absolute inset-0 flex items-center justify-center
-                         bg-black/20 hover:bg-black/40 transition-colors duration-200"
+                         bg-black/20 hover:bg-black/40 transition-colors duration-200 "
               aria-label="Play video"
             >
               <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center
-                              shadow-xl scale-90 group-hover:scale-100
-                              transition-transform duration-300">
+                              shadow-xl scale-90 group-hover:scale-100 
+                              transition-transform duration-300 cursor-pointer">
                 <FaPlay size={18} className="text-primary ml-1" />
               </div>
             </button>
@@ -130,7 +130,7 @@ function VideoCard({ video, isBn, idx, inView, onExpand }) {
                 className="absolute top-2 right-2 w-8 h-8 rounded-lg bg-black/50
                            flex items-center justify-center text-white
                            opacity-0 group-hover:opacity-100
-                           hover:bg-primary transition-all duration-200"
+                           hover:bg-primary transition-all duration-200 cursor-pointer"
                 aria-label="Expand video"
               >
                 <HiOutlineArrowsExpand className="w-4 h-4" />
@@ -177,11 +177,11 @@ function Lightbox({ video, isBn, onClose }) {
         <button
           onClick={onClose}
           className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60
-                     flex items-center justify-center text-white
+                     flex items-center justify-center text-white cursor-pointer
                      hover:bg-primary transition-colors"
           aria-label="Close"
         >
-          <HiOutlineX className="w-5 h-5" />
+          <HiOutlineX className="w-5 h-5 " />
         </button>
 
         {/* iframe */}
@@ -240,7 +240,7 @@ export default function TutorialSection() {
              backgroundSize: "32px 32px",
              opacity: 0.35,
            }} />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px]
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-75
                       rounded-full blur-3xl pointer-events-none"
            style={{ background: "radial-gradient(ellipse, rgba(46,135,223,0.08) 0%, transparent 70%)" }} />
 
@@ -283,7 +283,7 @@ export default function TutorialSection() {
             <button
               key={tab.key}
               onClick={() => handleTabChange(i)}
-              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer
                           ${font}
                           ${activeTab === i
                             ? "bg-primary text-white shadow-lg shadow-primary/25"
@@ -330,7 +330,7 @@ export default function TutorialSection() {
               disabled={page === 1}
               className="px-4 py-2 rounded-xl text-sm font-semibold border border-primary
                          text-muted hover:border-primary hover:text-primary
-                         disabled:opacity-40 disabled:cursor-not-allowed
+                         disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer
                          transition-all duration-200 font-en"
             >
               ← Prev
@@ -340,7 +340,7 @@ export default function TutorialSection() {
               <button
                 key={p}
                 onClick={() => setPage(p)}
-                className={`w-9 h-9 rounded-xl text-sm font-semibold font-en transition-all duration-200
+                className={`w-9 h-9 rounded-xl text-sm font-semibold font-en transition-all duration-200 cursor-pointer
                             ${page === p
                               ? "bg-primary text-white shadow-md shadow-primary/25"
                               : "border border-border text-muted hover:border-primary hover:text-primary"
@@ -356,7 +356,7 @@ export default function TutorialSection() {
               className="px-4 py-2 rounded-xl text-sm font-semibold border border-border
                          text-muted hover:border-primary hover:text-primary
                          disabled:opacity-40 disabled:cursor-not-allowed
-                         transition-all duration-200 font-en"
+                         transition-all duration-200 font-en  cursor-pointer"
             >
               Next →
             </button>

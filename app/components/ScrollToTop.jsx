@@ -31,7 +31,7 @@ export default function ScrollToTop() {
                      bg-primary text-white
                      flex items-center justify-center
                      shadow-lg shadow-primary/30
-                     hover:bg-primary/90
+                     hover:bg-primary/90 cursor-pointer
                      transition-colors duration-200"
           aria-label="Scroll to top"
         >
