@@ -33,7 +33,7 @@ const APPS = [
     titleKey:   "app.sms.title",
     versionKey: "app.sms.version",
     descKey:    "app.sms.desc",
-    img:        "/logo/sms-responder.png",
+    img:        "/logo/smsResponder.jpeg",
     apk:        "/apk/netFee_SMS_Responder_13_April.apk",
     color:      "from-violet-500/10 to-purple-500/5",
     iconBg:     "bg-violet-500/10",
@@ -126,7 +126,7 @@ export default function AppStoreSection() {
                     alt={t(app.titleKey)}
                     width={80}
                     height={80}
-                    className="object-contain"
+                    className="object-contain rounded-full"
                   />
                 </div>
               </div>
@@ -153,15 +153,20 @@ export default function AppStoreSection() {
                 <a
                   href={app.apk}
                   download
-                  className={`inline-flex items-center justify-center gap-2.5
+                  className={`group/dl relative overflow-hidden
+                              inline-flex items-center justify-center gap-2.5
                               w-full py-3 rounded-2xl font-semibold text-sm
-                              bg-primary text-white
-                              hover:bg-primary/90 active:scale-[0.98]
-                              transition-all duration-200
+                              border-2 border-primary text-primary
+                              hover:text-white active:scale-[0.98]
+                              transition-colors duration-300
                               shadow-lg shadow-primary/25 ${font}`}
                 >
-                  <HiOutlineDownload className="w-4 h-4" />
-                  {t("appstore.download")}
+                  <span className="absolute inset-0 bg-primary
+                                   translate-x-[-101%] group-hover/dl:translate-x-0
+                                   transition-transform duration-300 ease-out
+                                   rounded-xl" />
+                  <HiOutlineDownload className="relative z-10 w-4 h-4" />
+                  <span className="relative z-10">{t("appstore.download")}</span>
                 </a>
               </div>
             </motion.div>

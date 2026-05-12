@@ -101,25 +101,32 @@ export default function HeroSection() {
                   <div className="w-60 mx-auto lg:w-full flex flex-col sm:flex-row
                                   sm:flex-wrap gap-3 items-center sm:items-start">
                     <Link href="https://app.netfeebd.com/login" target="_blank" rel="noopener noreferrer"
-                      className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5
+                      className={`group relative w-full sm:w-auto overflow-hidden
+                                  inline-flex items-center justify-center gap-2.5
                                   px-7 py-3.5 rounded-2xl font-bold text-white
-                                  bg-linear-to-r from-primary to-primary/80
-                                  hover:from-primary/90 hover:to-primary
-                                  hover:scale-[1.03] active:scale-[0.98]
+                                  bg-primary border-2 border-primary
+                                  hover:bg-transparent hover:text-primary
+                                  active:scale-[0.98]
                                   transition-all duration-200 shadow-lg shadow-primary/30 ${font}`}>
-                      <FaUserGear className="text-xl shrink-0" />
-                      {t("Admin Login")}
+                      <FaUserGear className="relative z-10 text-xl shrink-0" />
+                      <span className={`relative z-10 ${font}`}>{t("Admin Login")}</span>
                     </Link>
 
                     <Link href="https://customer.netfeebd.com" target="_blank" rel="noopener noreferrer"
-                      className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5
+                      className={`group relative w-full sm:w-auto overflow-hidden
+                                  inline-flex items-center justify-center gap-2.5
                                   px-7 py-3.5 rounded-2xl font-bold
-                                  text-white border-2 border-secondary bg-secondary
-                                  hover:bg-secondary/5 hover:text-secondary hover:border-secondary
-                                  hover:scale-[1.03] active:scale-[0.98]
-                                  transition-all duration-200 ${font}`}>
-                      <FaUsers className="text-xl shrink-0" />
-                      {t("Customer Login")}
+                                  border-2 border-primary text-primary
+                                  hover:text-white
+                                  active:scale-[0.98]
+                                  transition-colors duration-300 ${font}`}>
+                      {/* left-to-right fill */}
+                      <span className="absolute inset-0 bg-primary
+                                       translate-x-[-101%] group-hover:translate-x-0
+                                       transition-transform duration-300 ease-out
+                                       rounded-xl" />
+                      <FaUsers className="relative z-10 text-xl shrink-0" />
+                      <span className={`relative z-10 ${font}`}>{t("Customer Login")}</span>
                     </Link>
 
                     <Link href="https://app.netfeebd.com/register" target="_blank" rel="noopener noreferrer"

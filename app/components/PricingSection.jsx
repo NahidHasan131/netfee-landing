@@ -136,14 +136,19 @@ function PlanCard({ plan, idx, inView, t, font, popular }) {
           href="https://app.netfeebd.com/register"
           target="_blank"
           rel="noopener noreferrer"
-          className={`block w-full py-2.5 rounded-xl text-sm font-semibold text-center
-                      transition-all duration-200 cursor-pointer
-                      ${popular
-                        ? "bg-primary text-white hover:bg-primary/90 shadow-md shadow-primary/25"
-                        : "border border-border text-muted hover:border-primary hover:text-primary"
-                      } ${font}`}
+          className={`group/btn relative overflow-hidden
+                      block w-full py-2.5 rounded-xl text-sm font-semibold text-center
+                      transition-colors duration-300 cursor-pointer
+                      border-2 border-primary text-primary hover:text-white
+                      ${popular ? "shadow-md shadow-primary/25" : ""}
+                      ${font}`}
         >
-          {t("Sign Up for the trial")}
+          {/* left-to-right fill */}
+          <span className="absolute inset-0 bg-primary
+                           translate-x-[-101%] group-hover/btn:translate-x-0
+                           transition-transform duration-300 ease-out
+                           rounded-lg" />
+          <span className="relative z-10">{t("Sign Up for the trial")}</span>
         </a>
       </div>
     </motion.div>

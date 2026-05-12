@@ -14,7 +14,7 @@ const TEAM = [
     nameKey: "Mohammad Songit",
     roleKey: "Support Executive",
     descKey: "Netfee is the software with Possibilities and Songit Mia is working as a Senior Executive to achieve higher goals.",
-    img:   "/images/support/songit.jpg",
+    img:   "/images/support/mohammad-Songit.png",
     phone: "01896192221",
     fb:    "https://www.facebook.com/md.sohag.rana.561548/",
   },
