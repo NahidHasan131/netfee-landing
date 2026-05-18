@@ -16,7 +16,7 @@ const APPS = [
     versionKey: "app.admin.version",
     descKey:    "app.admin.desc",
     img:        "/logo/netFee.png",
-    apk:        "/apk/netFee_Mikrotik_filtering_14_may.apk",
+    apk:        "/apk/netFee_Highlight_edited_customer_background_light_gray_18_May.apk",
     color:      "from-blue-500/10 to-primary/5",
     iconBg:     "bg-blue-500/10",
     badge:      "bg-blue-500/15 text-blue-600",
