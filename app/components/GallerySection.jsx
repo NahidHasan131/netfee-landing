@@ -105,7 +105,7 @@ export default function GallerySection() {
               modifier:     1.2,
               slideShadows: true,
             }}
-            autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination, Autoplay]}
             breakpoints={{

@@ -19,7 +19,7 @@ export function ThemeProvider({ children }) {
 
   /* On mount: read saved preference */
   useEffect(() => {
-    const saved = localStorage.getItem("netfee-theme") || "light";
+    const saved = localStorage.getItem("netfee-theme") || "system";
     setTheme(saved);
   }, []);
 

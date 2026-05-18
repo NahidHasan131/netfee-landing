@@ -29,7 +29,7 @@ const TEAM = [
   {
     nameKey: "Muhammad Abu Hasan",
     roleKey: "Support Executive",
-    descKey: "Netfee is the software with Possibilities and Muhammad Abu Hasan is working as a Junior Executive to achieve higher goals.",
+    descKey: "Muhammad Abu Hasan works as a Junior Executive at NetFee ISP Billing Software, contributing to growth and achieving bigger goals.",
     img:   "/images/support/mr_abu_hasan.jpeg",
     phone: "01896192225",
     fb:    "https://www.facebook.com/muhammadabuhasann",

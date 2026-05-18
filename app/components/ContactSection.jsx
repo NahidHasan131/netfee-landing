@@ -48,7 +48,7 @@ export default function ContactSection() {
              backgroundSize: "32px 32px",
              opacity: 0.35,
            }} />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px]
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-200 h-100
                       rounded-full blur-3xl pointer-events-none"
            style={{ background: "radial-gradient(ellipse, rgba(46,135,223,0.09) 0%, transparent 65%)" }} />
 
@@ -104,9 +104,9 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 32 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + idx * 0.12 }}
-              className="group rounded-3xl overflow-hidden border border-border
+              className="group rounded-3xl overflow-hidden border border-primary/30
                          bg-surface shadow-sm
-                         hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10
+                         hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/10
                          transition-all duration-300"
             >
               {/* map — top */}
